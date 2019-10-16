@@ -1,21 +1,22 @@
 #include<stdio.h>
-
+long long int fact(int n)
+{
+	long long int a[100],i;
+	a[0]=0;
+	a[1]=1;
+	for(i=2;i<=n;i++)
+	{
+		a[i]=i*a[i-1];
+	}
+	return a[n];	
+}
 int main()
 {
-	long int inp,pr;
-	pr=1;
-	
+    int n;
 	printf("Please enter an Integer Number ");
-	scanf("%ld",&inp);
-	
-	int i=0;
-	
-	for (i=1;i<=inp;i++)
-	{
-		pr*=i;
-	}
-
-	printf("The factorial of the number is: %ld \n",pr);
-
+	scanf("%d",&n);
+	long long int num;
+	num=fact(n);
+	printf("The factorial of the number is: %lld \n",num);
 	return 0;
 }
